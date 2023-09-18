@@ -3,6 +3,5 @@ public class Academia {
         private String nome;
         private int num;
         private int num2;
-        private int num3;
     }
 }

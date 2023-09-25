@@ -5,7 +5,7 @@ public class Menu {
     private static Scanner scanner = new Scanner(System.in);
     public static void main(String[]args){
         int escolha;
-        while(true){
+        while(true) {
             System.out.println("\nMenu:");
             System.out.println("1. Cadrastrar Aluno");
             System.out.println("2. Listar Alunos");
@@ -25,7 +25,7 @@ public class Menu {
             System.out.print("Escolha uma opção: ");
             escolha = lerOpcao();
 
-            switch(escolha){
+            switch(escolha) {
                 case 1:
                   AcademiaApp.cadrastrarAluno();
                   break;
@@ -73,8 +73,26 @@ public class Menu {
             }
         }   
     }
-}  
+ 
 
+private static int lerOpcao() {
+        int opcao;
+        do {
+            try {
+                opcao = scanner.nextInt();
+                if (opcao < 1 || opcao > 14) {
+                    System.out.println("Opção fora do intervalo válido. Tente novamente.");
+                }
+            } catch (java.util.InputMismatchException e) {
+                System.out.println("Opção inválida. Tente novamente.");
+                opcao = 0;
+            } finally {
+                scanner.nextLine();
+            }
+        } while (opcao < 1 || opcao > 14);
+        return opcao;
+    }
+}
 
     
 

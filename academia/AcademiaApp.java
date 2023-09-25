@@ -28,5 +28,45 @@ Scanner(System.in);
     }
      
     // Coloque a primeira letra do nome em maiuscula e o restante minusculas
+    nome = nome.substring(0, 1).toUpperCase() + nome.substring(1).toLowerCase();
+
+    int idade;
+    boolean entradaValida = false;
+    do {
+        System.out.println("Idade do aluno: ");
+        idade = 0;
+
+        try {
+            idade = scanner.nextInt();
+            scanner.nextLine();
+            entradaValida = true;
+
+            if (idade < 0) {
+                System.out.println("Idade nao pode ser negativa. Tente novamente.");
+                entradaValida = false;
+            }
+            } catch (java.util.InputMismatchException e){
+                System.out.println("Idade invalida. Certifique-se de inserir um numero inteiro.");
+                scanner.nextLine(): // Limpa a entrada invalida
+            }
+
+
+            } while (!entradaValida);
+
+            String respostaProblemaSaude;
+            do {
+                System.out.println("Problema de saude (Sim/Nao): ");
+                respostaProblemaSaude = scanner.nextLine();
+                if
+             
+                (!respostaProblemaSaude.equalsIgnoreCase("Sim") && !respostaProblemaSaude.equalsIgnoreCase("Nao"));
+                System.out.println("Resposta invalida. Digite 'Sim' ou 'Nao'.");
+
+            }
+  } while
+  
+
+        }
+    }
   }
 }

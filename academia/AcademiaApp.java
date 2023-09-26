@@ -64,8 +64,59 @@ Scanner(System.in);
 
             }
   } while
-  
+  (!respostaProblemaSaude.equalsIgnoreCase("Sim") && !respostaProblemaSaude.equalsIgnoreCase("Nao"));
 
+
+       String respostaSexo;
+    do {
+        System.out.println("Sexo M/F");
+        respostaSexo = scanner.nextLine();
+
+        if (respostaSexo.equalsIgnoreCase("M")){
+            respostaSexo = "Masculino";
+        }else if (respostaSexo.equalsIgnoreCase("F")){
+            respostaSexo = "Feminino";
+
+        } else {
+            System.out.println("Reposta invalida. Digite 'M' para homem ou 'F' para mulher.");
+
+        }
+    }while 
+    (!respostaSexo.equalsIgnoreCase("Masculino") && !respostaSexo.equalsIgnoreCase("Feminino"));
+
+     String tipoPagamento;
+     do{
+        System.out.println("Tipo de pagamento (Mensal/Anual):");
+        tipoPagamento = scanner.nextLine();
+
+        if(!tipoPagamento.equalsIgnoreCase("Mensal") && !tipoPagamento.equalsIgnoreCase("Anual")){
+       System.out.println("Tipo de pagamento invalido. Digite 'Mensal' ou 'Anual.");
+
+        }
+     } while
+     (!tipoPagamento.equalsIgnoreCase("Mensal") && !tipoPagamento.equalsIgnoreCase("Anual"));
+
+     // converter "Mensal" para "Pagamento Mensal e "Anual" para "Pagamento Anual"
+      if(tipoPagamento.equalsIgnoreCase("Mensal")){
+        tipoPagamento = "Pagamento Mensal";
+      } else if
+      (tipoPagamento.equalsIgnoreCase("Anual")){
+        tipoPagamento = "Pagamento Anual";
+      }
+         Aluno aluno = new
+    Aluno(alunoldGenerator.getAndIncrement(), nome, idade, respostaProblemaSaude.equalsIgnoreCase("Sim"), respostaSexo, tipoPagamento);
+     
+          alunos.add(aluno);
+
+          // Verifique se o aluno escolheu pagamento anual e , se sim, torne-o membro
+          if
+          (tipoPagamento.equalsIgnoreCase("Pagamento Anual")){
+             aluno.tornarMembro();
+          }
+          System.out.println("Aluno cadastrado com sucesso!");
+      }
+      }
+ 
         }
     }
   }
